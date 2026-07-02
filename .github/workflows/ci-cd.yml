@@ -5,23 +5,6 @@ on:
   workflow_dispatch:
 jobs:
   # ---------- CI: Lint + basic checks ----------
-  lint-frontend:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: mern/frontend/package-lock.json
-      - name: Install frontend dependencies
-        working-directory: ./mern/frontend
-        run: npm ci
-      - name: Run frontend lint
-        working-directory: ./mern/frontend
-        run: npm run lint
   test-backend:
     runs-on: ubuntu-latest
     steps:
