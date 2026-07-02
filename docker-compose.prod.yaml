@@ -1,6 +1,6 @@
 services:
   backend:
-    build: ./mern/backend
+    image: sharaz123/mern-app:backend
     ports:
       - "5050:5050"
     networks:
@@ -11,14 +11,9 @@ services:
       mongodb:
         condition: service_healthy
   frontend:
-    build:
-      context: ./mern/frontend
-      target: dev
+    image: sharaz123/mern-app:frontend
     ports:
-      - "5173:5173"
-    volumes:
-      - ./mern/frontend:/app
-      - /app/node_modules
+      - "8080:80"
     networks:
       - mern_network
     environment:
