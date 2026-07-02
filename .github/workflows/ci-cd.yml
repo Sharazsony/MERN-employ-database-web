@@ -26,7 +26,7 @@ jobs:
   # ---------- Validate Docker builds work ----------
   docker-build-check:
     runs-on: ubuntu-latest
-    needs: [lint-frontend, test-backend]
+    needs: [test-backend]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
