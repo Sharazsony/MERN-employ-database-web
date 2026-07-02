@@ -16,5 +16,25 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': 'off',
   },
-}
+  overrides: [
+    {
+      files: ['cypress/integration/**/*.js', 'cypress/**/*.spec.js'],
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        before: 'readonly',
+        after: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        cy: 'readonly',
+        Cypress: 'readonly',
+      },
+    },
+    {
+      files: ['cypress/plugins/**/*.js', 'cypress.config.js'],
+      env: { node: true },
+    },
+  ],
+};
