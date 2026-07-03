@@ -7,7 +7,7 @@ on:
 
 env:
   GHCR_REGISTRY: ghcr.io
-  IMAGE_OWNER: ${{ github.repository_owner }}
+  IMAGE_OWNER: sharazsony
   DOCKERHUB_OWNER: sharaz123
 
 jobs:
